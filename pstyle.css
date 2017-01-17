@@ -1,4 +1,4 @@
- body{
+ body{ body{
    background: #999; 
    padding: 0;
    margin: 0;
@@ -56,11 +56,27 @@
   #border{
     background: black;
     height: 50px;
-    padding: 5px 10px;
+    padding: 10px 5px;
     color: white;
     border: solid 1px blue;
     margin: 200px;
   }
+
+
+
+  #test{
+    background: #333;
+    height: 500px;
+    border: 1px solid blue;
+    margin: 0px;
+    padding: 10px;
+  }
+
+    /*#test{
+    background: #C0C0C0;
+    height: 500px;
+    border: 1px solid red;
+  }*/
 
  /* #obsah{
     position: absolute;
@@ -77,11 +93,11 @@
 
   #logo{
     position: absolute;
-    left: 600px;
-    top: 125px;
+    left: 1000px;
+    top: 10px;
   }
 
-  #border-logo{
+  /*#border-logo{
     background: #111;
     height: 100px;
     border: solid 1px white;
@@ -90,4 +106,12 @@
     color: white;
     width: 1709px;
     float: left;
-  } 
+  }*/
+
+
+  #footer{
+    position: absolute;
+    left: 880px;
+    top: 860px;
+    color: #999;
+  }
