@@ -17,6 +17,7 @@
     padding: 0;
     text-align: center;
   }
+
   .menu ul li{
     list-style: none;
     display: inline-block;
@@ -51,14 +52,28 @@
 
   #obsah{
     padding: 2px 2px;
-    margin: 200px;
+    margin: 170px;
     background: #111;
     color: white;
   }
 
   .info{
-    background: #999;
+    background: #555;
     padding: 10px;
     margin: 0;
     height: none;
+    font-size: 15px;
+    color: #D0D0D0;
+  }
+
+  .info b{
+    color: #fff;
+  }
+
+  .color b{
+    color: #F0F0F0;
+  }
+
+  .zaver{
+    color: white;
   }
