@@ -3,106 +3,47 @@
 <head>
 <title></title>
 <meta charset="UTF-8">
+<meta name="theme-color" content="#111"> 
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <style>
 
-body{
-  padding: 0;
-  margin: 0;
-  font-family: "Ubuntu";
-}
 
-.menu{
-  overflow: hidden;
-  background-color: black;
-  /*border-bottom: 2px solid #00ccff;*/
-}
-
-.menu a{
-  color: white;
-  text-decoration: none;
-  padding: 0;
-  margin: 14px 0px 14px 16px;
-  font-size: 17px;
-  display: block;
-  float: left;
-  transition: 0.25s;
-}
-
-.menu a:hover{
-  color: #00ccff;
-}
-
-
-
-.container{
-	display: inline-block;
-	cursor: pointer;
-	margin: 3px 16px 0 0;
+.dropdown-content{
 	display: none;
-}
-
-.bar1, .bar2, .bar3{
-	background-color: white;
-	width: 35px;
-	height: 5px;
-	margin: 6px 0;
-	transition: 0.4s;
-}
-
-.change .bar1{
-	-webkit-transform: rotate(-45deg) translate(-9px, 6px);
-	transform: rotate(-45deg) translate(-9px, 6px);
-}
-
-.change .bar2{
-	opacity: 0;
-}
-
-.change .bar3{
-	-webkit-transform: rotate(45deg) translate(-8px, -8px);
-	transform: rotate(45deg) translate(-8px, -8px)
+	overflow: auto;
 }
 
 
 
-@media screen and (max-width: 1000px){
-	.menu a:not(:first-child){display: none;}
+/*.dropdown-content a{
+	display: block;
+}*/
 
-	.container{
-		float: right;
-		display: block;
-	}
-}
-
-@media screen and (max-width: 1000px){
-	.menu.res{
-		position: relative;
-	}
-
-	.menu.res .container{
-		position: absolute;
-		top: 0;
-		right: 0;
-	}
-
-	.menu.res a{
-		display: block;
-		float: none;
-		text-align: left;
-	}
+.show{
+	display: block;
 }
 
 </style>
 
 <div class="menu" id="idMenu">
-  <a href="#">Domov</a>
+  <a class="active">Domov</a>
   <a href="#">Link 1</a>
-  <a href="#">Link 2</a>
+
+  <div class="dropdown">
+  <a onclick="funkcia()" class="dropbtn" href="#">Klik <i class="fa fa-angle-down"></i></a>
+  <div id="myDropdown" class="dropdown-content">
+  	<a href="#">Link 2</a>
+  	<a href="#">Link 3</a>
+  	<a href="#">Link 4</a>
+  </div>
+  </div>
 
   <div class="container" onclick="myFunction(this)">
 	<div class="bar1"></div>
@@ -120,6 +61,12 @@ function myFunction(x){
 	x.classList.toggle("change");
 	y.classList.toggle("res")
 }
+
+function funkcia(){
+	document.getElementById("myDropdown").classList.toggle("show");
+}
+
+
 </script>
 
 <!-- <i class='fa fa-angle-down'></i> -->
