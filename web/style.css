@@ -1,0 +1,97 @@
+body{
+  padding: 0;
+  margin: 0;
+  font-family: "Ubuntu";
+  /*background-image: url("../Pictures/test4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;*/
+}
+
+.menu{
+  overflow: hidden;
+  background-color: black;
+  /*border-bottom: 2px solid #00ccff;*/
+}
+
+.menu a{
+  color: white;
+  text-decoration: none;
+  padding: 0;
+  margin: 14px 0px 14px 16px;
+  font-size: 17px;
+  display: block;
+  float: left;
+  transition: 0.25s;
+}
+
+.menu a:hover{
+  color: #00ccff;
+}
+
+a.active{
+	cursor: default;
+}
+
+
+.container{
+	display: inline-block;
+	cursor: pointer;
+	margin: 3px 16px 0 0;
+	display: none;
+}
+
+.bar1, .bar2, .bar3{
+	background-color: white;
+	width: 35px;
+	height: 5px;
+	margin: 6px 0;
+	transition: 0.4s;
+}
+
+.change .bar1{
+	-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+	transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2{
+	opacity: 0;
+}
+
+.change .bar3{
+	-webkit-transform: rotate(45deg) translate(-8px, -8px);
+	transform: rotate(45deg) translate(-8px, -8px)
+}
+
+
+
+@media screen and (max-width: 1000px){
+	.menu a:not(:first-child){display: none;}
+
+	.container{
+		float: right;
+		display: block;
+	}
+
+	.menu .dropbtn{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1000px){
+	.menu.res{
+		position: relative;
+	}
+
+	.menu.res .container{
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	.menu.res a{
+		display: block;
+		float: none;
+		text-align: left;
+	}
+}
