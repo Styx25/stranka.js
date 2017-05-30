@@ -1,75 +1,179 @@
 <!doctype html>
 <html>
 <head>
-<title></title>
-<meta charset="UTF-8">
-<meta name="theme-color" content="#111"> 
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700">
+<title>Príkazy</title>
+<meta charset="utf-8">
+<meta name="theme-color" content="#141414">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <style>
 
+body{
+	padding: 0;
+	margin: 0;
+	background-color: #141414;
+	font-family: Roboto, sans-serif;
+}
 
-.dropdown-content{
-	display: none;
-	overflow: auto;
+.wizity{
+	margin-top: 20px;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+	font-size: 50px;
+	letter-spacing: 5px;
+	animation: animacia .99s linear infinite;
+	transition: 0.5s;
+}
+
+@keyframes animacia{
+	0% { letter-spacing: 5px }
+	10% { letter-spacing: 6px }
+	20% { letter-spacing: 7px }
+	30% { letter-spacing: 8px }
+	40% { letter-spacing: 9px }
+	50% { letter-spacing: 10px }
 }
 
 
 
-/*.dropdown-content a{
-	display: block;
-}*/
+table{
+	margin-top: 50px;
+	width: 100%;
+	border-collapse: collapse;
+}
 
-.show{
-	display: block;
+th, td{
+	color: white;
+	text-align: left;
+	padding: 8px;
+}
+
+th{
+	background-color: #303030;
+}
+
+td{
+	background-color: #252525;
+}
+
+.accordion, .panel{display: none;}
+
+@media only screen and (max-width: 900px){
+	table{display: none;}
+
+	div.accordion {
+    background-color: #303030;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    margin-top: 50px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    display: block;
+  }
+
+ /* div.accordion.active, div.accordion:hover {
+    background-color: #ddd;
+  }*/
+
+  div.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+
+  div.accordion.active:after {
+    content: "\2212";
+  }
+
+  div.panel {
+    padding: 0 18px;
+    margin-bottom: -50px;
+    background-color: #252525;
+    color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    display: block;
+  }
 }
 
 </style>
 
-<div class="menu" id="idMenu">
-  <a class="active">Domov</a>
-  <a href="#">Link 1</a>
+<div class="wizity">Wizity.sk</div>
 
-  <div class="dropdown">
-  <a onclick="funkcia()" class="dropbtn" href="#">Klik <i class="fa fa-angle-down"></i></a>
-  <div id="myDropdown" class="dropdown-content">
-  	<a href="#">Link 2</a>
-  	<a href="#">Link 3</a>
-  	<a href="#">Link 4</a>
-  </div>
-  </div>
+<div class="wizityLine"></div>
 
-  <div class="container" onclick="myFunction(this)">
-	<div class="bar1"></div>
-	<div class="bar2"></div>
-	<div class="bar3"></div>
+<table>
+
+<tr>
+	<th>Príkaz</th>
+	<th>Opis</th>
+</tr>
+<tr>
+	<td>Woot</td>
+	<td >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua.</td>
+</tr>
+<tr>
+	<td>Grab</td>
+	<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua.</td>
+</tr>
+<tr>
+	<td>Meh</td>
+	<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua.</td>
+</tr>
+
+</table>
+
+<div class="accordion">Woot</div>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 </div>
 
+<div class="accordion">Grab</div>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 </div>
 
+<div class="accordion">Meh</div>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
 
 <script>
-var y = document.getElementById("idMenu");
+var acc = document.getElementsByClassName("accordion");
+var i;
 
-function myFunction(x){
-	x.classList.toggle("change");
-	y.classList.toggle("res")
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  }
 }
-
-function funkcia(){
-	document.getElementById("myDropdown").classList.toggle("show");
-}
-
-
 </script>
 
-<!-- <i class='fa fa-angle-down'></i> -->
+
+
+<!-- <i class="fa fa-plus" aria-hidden="true"></i>
+<i class="fa fa-minus" aria-hidden="true"></i> -->
 
 </body>
 </html>
