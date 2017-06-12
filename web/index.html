@@ -4,6 +4,7 @@
 <title>Príkazy</title>
 <meta charset="utf-8">
 <meta name="theme-color" content="#141414">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -18,18 +19,18 @@ body{
 	font-family: Roboto, sans-serif;
 }
 
-.wizity{
+.wizityTitle{
 	margin-top: 20px;
 	text-align: center;
 	font-weight: bold;
 	color: white;
 	font-size: 50px;
 	letter-spacing: 5px;
-	animation: animacia .99s linear infinite;
+	animation: wizityTitleAnimation .99s linear infinite;
 	transition: 0.5s;
 }
 
-@keyframes animacia{
+@keyframes wizityTitleAnimation{
 	0% { letter-spacing: 5px }
 	10% { letter-spacing: 6px }
 	20% { letter-spacing: 7px }
@@ -69,7 +70,7 @@ td{
     background-color: #303030;
     color: white;
     cursor: pointer;
-    padding: 8px 0px 8px 5px;
+    padding: 8px 0;
     margin-top: 50px;
     width: 100%;
     border: none;
@@ -111,7 +112,7 @@ td{
 
 </style>
 
-<div class="wizity">Wizity.sk</div>
+<div class="wizityTitle">Wizity.sk</div>
 
 <div class="wizityLine"></div>
 
