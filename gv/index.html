@@ -1,1 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<title>Galaktické vojny</title>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="theme-color" content="#141414"> -->
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+<background></background>
 
+<content>
+
+	<div class="info">
+		<div class="header">Galaktické vojny</div>
+		<div class="content">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</div>
+	</div>
+
+	<div class="formPage">
+		<div class='menu'>
+			<a onclick="changeContent('login')" class='login active'>Prihlasiť sa</a>
+			<a onclick="changeContent('register')" class='register'>Zaregistrovať sa</a>
+		</div>
+
+		<form action='' method='POST' id='login'>
+			<label for='loginName'>Meno</label>
+			<input type='text' name='loginName' required>
+			<label for='loginPassword'>Heslo</label>
+			<span class="fa fa-eye-slash show" onclick="changeInput('loginInput')"></span>
+			<input type='password' name='loginPassword' id='loginInput' required>
+			<input type='submit' name='loginButton' value='Prihlásiť sa'>
+
+			<hr>
+
+			<p class='forget'>Zabudol si heslo?</p>
+		</form>
+
+		<form action='' method='POST' id='register' style='display: none;'>
+			<label for='registerName'>Meno</label>
+			<input type='text' name='registerName' required>
+			<label for='registerPassword'>Heslo</label>
+			<span class="fa fa-eye-slash show" onclick="changeInput('registerInput')"></span>
+			<input type='password' name='registerPassword' id='registerInput' required>
+			<label for='registerPassword2'>Heslo znova</label>
+			<span class="fa fa-eye-slash show" onclick="changeInput('registerInput2')"></span>
+			<input type='password' name='registerPassword2' id='registerInput2' required>
+			<label for='e-mail'>E-mail</label>
+			<input type='email' name='e-mail' required>
+			<input type='submit' name='registerButton' value='Vytvoriť účet'>
+		</form>
+	</div>
+
+	<footer><a href='#'>Facebook</a><a href='#'>Fórum</a><a href='#'>YouTube</a></footer>
+</content>
+
+<script>
+$(".show").click(function(){
+	$(this).toggleClass('fa-eye fa-eye-slash');
+});
+function changeInput(input){
+	var input = document.getElementById(input);
+	
+	if(input.type === "password"){
+		input.type = "text";
+	}
+	else{
+		input.type = "password";
+	}
+}
+
+function changeContent(change){
+	$(".active").removeClass("active");
+	$("."+ change).addClass("active");
+
+	$("form").css("display", "none");
+	$("#"+ change).css("display", "block");
+}
+
+</script>
+	
+</body>
+</html>
