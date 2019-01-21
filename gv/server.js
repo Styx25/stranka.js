@@ -116,3 +116,165 @@ $(".background").click(function(){
 
 </body>
 </html>
+
+css
+#body{
+	position: relative;
+	top: 130px;
+	margin: 0 0 0 150px;
+	width: 950px;
+	height: 525px;
+	background-color: rgba(33, 33, 33, 0.65);
+}
+
+.menu{
+	position: relative;
+	height: 100%;
+	width: 200px;
+	background-color: rgba(44, 44, 53, 0.60);
+	color: #999;
+}
+
+.menu a{
+	display: block;
+	font-family: "Open Sans", sans-serif;
+	margin: 5px 10px ;
+	font-size: 17px;
+	cursor: pointer;
+	margin-bottom: 2px;
+	transition: 0.5s;
+}
+
+.menu a:hover{color: #fff;}
+
+.content{
+	position: relative;
+	width: 600px; 
+	min-height: 400px;
+	background-color: rgba(44, 44, 53, 0.60);
+	margin: 40px 0 0 50px;
+	padding: 15px 20px 20px 20px;
+}
+
+.menu, .content{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.content .header{
+	font-size: 25px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	letter-spacing: 1px;
+	font-family: "calibri", sans-serif;
+}
+
+.tab{
+	position: absolute;
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+
+table{
+	width: 100%;
+}
+
+td{
+	padding: 10px 0;
+}
+
+#account td:nth-child(1){
+	width: 20%;
+	padding-right: 70px;
+}
+
+#account td:nth-child(2){
+	width: 60%;
+	margin: 0 100px 0 30px;
+}
+
+#account td:nth-child(3){
+	width: 30%;
+	margin-left: 10px;
+}
+
+.settings{
+	color: #aaa;
+}
+
+.change{
+	position: absolute;
+	cursor: pointer;
+}
+
+.background{
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+}
+
+.nameForm{
+	position: absolute;
+}
+
+
+/*________gaming__________*/
+
+footer{
+	position: absolute;
+	font-family: "Open Sans", sans-serif;
+	bottom: 35px;
+	width: 100%;
+}
+
+footer input{
+	padding: 7px 14px;
+	border: none;
+	border-radius: 25px;
+	font-family: Arial, Helvetica, sans-serif;
+	outline: none;
+	cursor: pointer;
+	color: #fff;
+	transition: 0.3s;
+}
+
+footer input.newSettings{
+	/*background-color: #1061EE;*/
+	background: none;
+	border: 1px solid #1061EE;
+	/*opacity: 0.7;*/
+}
+
+/*footer input.newSettings:hover{
+	background-color: #0c45a7;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+*/
+footer input.defaultSettings{
+	/*margin-left: 300px;*/
+	float: right;
+	margin-right: 40px;
+	/*background-color: #4CAF50;*/
+	/*background-color: #01c10a;*/
+	background: none;
+	border: 1px solid #01c10a;
+}
+
+/*footer input.defaultSettings:hover{
+	background-color: #0b8e11;
+}
+*/
+
+/*____________Blok________________*/
+
+input[type='text']{
+	margin-left: 10px;
+}
+
+input[type='submit']{
+	margin-left: 5px;
+}
